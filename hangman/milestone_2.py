@@ -1,7 +1,6 @@
 import random
 
-favorite_fruits = ["apple", "banana", "orange", "pear", "strawberry"]
-word_list = favorite_fruits
+word_list = ["apple", "banana", "orange", "pear", "strawberry"]
 print (word_list)
 
 random.choice(word_list)
