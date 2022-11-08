@@ -8,8 +8,7 @@ class Hangman:
     word = random.choice(word_list)
     
     word_guessed = ['_', '_', '_', '_', '_']
-    num_letters = int()
-    num_lives = int(10)
+    num_letters = int('')
     list_of_guesses = []
     
 _init_ = Hangman 
