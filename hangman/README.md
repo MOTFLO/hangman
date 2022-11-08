@@ -44,3 +44,50 @@ if len(guess) <= 1 and guess.isalpha () == True:
 else:
     print ("Oops! That is not a valid input.")
 ```
+# Milestone 3
+### The milstone 3 is providing further information on how to define a function in oreder to use for a specific functionality. In the case scenarios have been implemented two types of fuctions, which are called for different type of process.
+* A function that will take the guessed letter as an argument and and ckeck if the letter is in the word
+* A function that is asking for an input from the user
+
+## Defining a function that is checking the guess from the user
+```
+# Defining a function called "check_guess" and passing the "guess" as a parameter for the function
+# Converting the input from the user into lower case using the method "guess.lower()"
+# Checking the conditionalities if the guess is in the word, while the lenght of guess is meeting the criteria and is alphabet
+# If the guess is in the word while loop has been satisfied, print the statment that says is a "Good guess!" and proiding option tp another try. 
+# Else, print the "Sorry" statment and providing option to try again.
+# Using the convert method, to convert the guess in lower case
+
+def check_guess(guess):
+    guess = guess.lower()
+    while len(guess) <= 1 and guess.isalpha() == True:
+        random.choice(word_list)
+        word = random.choice(word_list)
+        if guess in word:
+            print ("Good guess!" + guess + " is in the " + word + ".")
+        else:
+            print ("Sorry, " + guess + " is not in the word. Try again.")
+        guess = input("Please guess a letter:")
+        guess = guess.lower()
+        Break
+    else:
+        return check_guess
+```
+## Defining a function that is asking for input from the user
+```
+# Defining the function called "ask_for_input"
+# Asking for the input from the user using the guees variable
+# If the criteria is met of the guess variable when is ckecked by "check_guess" function and is in the random word, print the statment from "check_guess" function
+# Else, print the following statment "Invalid letter. Please, enter a single alphabetical character." and return the function.
+# Calling the function "ask_for_input" 
+
+def ask_for_input():
+    guess = input("Please guess a letter:")
+    if check_guess(guess) == True and guess in check_guess.word(guess):
+        print (check_guess)
+    else:
+        print ("Invalid letter. Please, enter a single alphabetical character.")
+        return ask_for_input
+
+ask_for_input()
+```
