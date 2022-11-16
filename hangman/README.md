@@ -91,3 +91,40 @@ def ask_for_input():
 
 ask_for_input()
 ```
+# Milestone 4
+### In milestone 4 has been implemented the Object Oriented Programming (OOP) to create a game class Hangman, where have been implemented the following taks:
+* How to create and initialise a class
+* Creating methods for running the checks
+* Defining what happens if the letter is in the word
+* Defining what happens if letter in NOT in the word
+
+## How to create and initialize a class
+```
+# First is created a class Hangman
+# Within the class is defined the "_init_" methot to initialise the attributes of the self class, having the parameters "word_list" and "num_lives"
+# Initializing other attribute within the "_init_" method: "word", "word_guessed", "num_letters", "num_lives" and the "list_of_guesses"
+
+class Hangman:
+    
+    word_list = ["apple", "banana", "orange", "pear", "strawberry"]
+    list_of_guesses = []
+    word = random.choice(word_list)
+    word_guessed = ['_']
+    num_letters = int()
+    num_lives = 5
+
+    def _init_(self, word_list, num_lives):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_']
+        self.num_letters = int()
+        self.list_of_guesses = []
+
+game = Hangman()
+game._init_()
+```
+## Creating methods for running the checks
+```
+# Defining a method "check_guess" method and passing the "guess" to the method as parameter
+```
