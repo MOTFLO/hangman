@@ -92,11 +92,11 @@ def ask_for_input():
 ask_for_input()
 ```
 # Milestone 4
-### In milestone 4 has been implemented the Object Oriented Programming (OOP) to create a game class Hangman, where have been implemented the following taks:
+### In milestone 4 has been implemented the Object Oriented Programming (OOP), creating a game class Hangman, covering the following taks:
 * How to create and initialise a class
 * Creating methods for running the checks
-* Defining what happens if the letter is in the word
-* Defining what happens if letter in NOT in the word
+* Defining what happens if the letter is in the word in "check_guess" method
+* Defining what happens if letter in NOT in the word in "check_guess" method
 
 ## How to create and initialize a class
 ```
@@ -127,4 +127,71 @@ game._init_()
 ## Creating methods for running the checks
 ```
 # Defining a method "check_guess" method and passing the "guess" to the method as parameter
+# Converting the "guess" variable input to lower case using "guess.lower()" method
+# Creating an "if" block to verify if guess is in the word
+# If the conditionality is met, then using the print function to print the following message "Good guess! {guess} is in the word."
+
+def check_guess(self, guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print("Good guess! " + guess + " is in the word.")
+
+
+# Defining a method called "ask_for_input" which is asking the user for input
+# Creating a while loop and if it is "True" do the following
+# Ask the user to guess a letter using the variable called "guess"
+# Creating an "if" statement that runs if the guess is NOT a single alphabetical character
+# Using the "print" function to print a message saying "Invalid letter. Please, enter a single alphabetical character."
+# Creating an "elif" statement that checks if the "guess" is already in the "list_of_guesses"
+# Using the "print" function to print a message saying "You already tried that letter!", if "elif" statement has not been met
+# If the guess is a single alphabetical character and it's not already in the list_of_guesses, then do the following
+# Creating an "else" block and calling the "check_guess" method and passing "guess" as an argument to this method
+# Then, adding the "guess" to the "list_of_guesses" using the "list_of_guesses.append()" method
+
+def ask_for_input(self):
+        while True:
+            guess = input("Please, guess a letter:")
+            guess = guess.lower()
+            if  len(guess) > 1 or guess.isalpha() == False:
+                print ("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print ("You already tried that letter!")
+            else:
+                if len(guess) <= 1 and guess.isalpha() == True:
+                    self.check_guess(guess)
+                    self.list_of_guesses.append(guess)
+        return
 ```
+## Defining what happens if the letter is in the word in "check_guess" method
+```
+# Replacing the underscore(s) in the "word_guessed" with the letter guesssed by the user input
+# Creating a for-loop that will loop through each letter in the word
+# Within the for-loop, is implemented an "if" statement that checks if the letter is equal to the "guess"
+# In the if block, replacing the corresponding "_" in the "word_guessed" with the guess and indexing the "word_guessed" at the position of the letter and assigning it to the letter
+# Outside the loop, variable "num_letters" is reduced by 1
+
+            for i in range(0, len(self.word)):
+                if self.word[i] == guess:
+                    self.word_guessed= str(self.word_guessed)[:i] + guess + str(self.word_guessed)[i + 1:]
+                    print (self.word_guessed)
+            self.num_letters -= 1
+```
+# Defining what happens if letter in NOT in the word in "check_guess" method
+```
+# Within the "check_guess" method is created an "else" statement as a continuity of the method
+# If the above conditions has not been met, then do the following
+# Redure the number of lives "num_lives" by 1
+# Using the "print" function, print a message saying "Sorry, {letter} is not in the word."
+# Using the "print" function, print another message saying "You have {num_lives} lives left."
+# Aappending the guess to the "list_of_guesses" using the "list_of_guesses.append()" method
+# Returning "ckeck_guess" method
+
+        else:
+            self.num_lives -= 1
+            print ("Sorry, " + guess + " is not in the word.")
+            print ("You have " + str(self.num_lives) + " lives left.")
+            self.list_of_guesses.append(guess)
+            print (self.list_of_guesses)
+        return
+```
+Note: For a complete code program, see the "milestone_4.py" file.
