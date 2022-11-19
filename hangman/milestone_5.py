@@ -62,6 +62,6 @@ def play_game(word_list):
         else:
             print ("Congratulations.You won the game!")
             break
-        return
+    return
 
 play_game(Hangman.word_list)
