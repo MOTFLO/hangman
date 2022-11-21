@@ -176,7 +176,7 @@ def ask_for_input(self):
             print (self.word_guessed)
             self.num_letters -= 1
 ```
-# Defining what happens if letter in NOT in the word in "check_guess" method
+## Defining what happens if letter in NOT in the word in "check_guess" method
 ```
 # Within the "check_guess" method is created an "else" statement as a continuity of the method
 # If the above conditions has not been met, then do the following
