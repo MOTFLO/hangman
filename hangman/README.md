@@ -197,3 +197,11 @@ def ask_for_input(self):
 Note: For a complete code program, see the "milestone_4.py" file.
 
 # Milestone 5
+### The logic of the Hangman game is to play the game as long the number of lives are not exceeded and the letter is in a word that have to be guessed. If the guess letter is in the random word from the list, wich is implemented in the game, the word will be reconstructed guess by guess, taking an input from the user.
+### Every time a letter is not a match, the number of lives for the player is decreasing by 1. When the number of lives is 0, the player has lost the game.
+### The creation of the Hangman game is based on a number of factors as:
+* Defining a class
+* Implementing variables for the class
+* Initialiasing the variables within the class
+* Implementing and defining methods within the class
+* Calling the class methods to run the game
