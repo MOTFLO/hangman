@@ -109,20 +109,20 @@ class Hangman:
     word_list = ["apple", "banana", "orange", "pear", "strawberry"]
     list_of_guesses = []
     word = random.choice(word_list)
-    word_guessed = ['_']
-    num_letters = int()
+    word_guessed = ['_'] * len(word)
+    num_letters = int(len(word))
     num_lives = 5
-
-    def _init_(self, word_list, num_lives):
+    
+    def __init__(self, word_list, num_lives):
         self.word_list = word_list
         self.num_lives = num_lives
         self.word = random.choice(word_list)
-        self.word_guessed = ['_']
-        self.num_letters = int()
+        self.word_guessed = ['_'] * len(self.word)
+        self.num_letters = int(len(self.word))
         self.list_of_guesses = []
 
 game = Hangman()
-game._init_()
+game.__init__()
 ```
 ## Creating methods for running the checks
 ```
@@ -151,15 +151,13 @@ def check_guess(self, guess):
 def ask_for_input(self):
         while True:
             guess = input("Please, guess a letter:")
-            guess = guess.lower()
             if  len(guess) > 1 or guess.isalpha() == False:
                 print ("Invalid letter. Please, enter a single alphabetical character.")
             elif guess in self.list_of_guesses:
                 print ("You already tried that letter!")
             else:
-                if len(guess) <= 1 and guess.isalpha() == True:
-                    self.check_guess(guess)
-                    self.list_of_guesses.append(guess)
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
         return
 ```
 ## Defining what happens if the letter is in the word in "check_guess" method
@@ -170,10 +168,12 @@ def ask_for_input(self):
 # In the if block, replacing the corresponding "_" in the "word_guessed" with the guess and indexing the "word_guessed" at the position of the letter and assigning it to the letter
 # Outside the loop, variable "num_letters" is reduced by 1
 
-            for i in range(0, len(self.word)):
-                if self.word[i] == guess:
-                    self.word_guessed= str(self.word_guessed)[:i] + guess + str(self.word_guessed)[i + 1:]
-                    print (self.word_guessed)
+            for char in self.word:
+                if char == guess:
+                    indices = (i for i, c in enumerate(self.word) if c == guess)
+                    for i in indices:
+                        self.word_guessed[i] = guess
+            print (self.word_guessed)
             self.num_letters -= 1
 ```
 # Defining what happens if letter in NOT in the word in "check_guess" method
@@ -195,3 +195,5 @@ def ask_for_input(self):
         return
 ```
 Note: For a complete code program, see the "milestone_4.py" file.
+
+# Milestone 5

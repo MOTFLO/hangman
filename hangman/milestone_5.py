@@ -45,9 +45,8 @@ class Hangman:
             elif guess in self.list_of_guesses:
                 print ("You already tried that letter!")
             else:
-                if len(guess) <= 1 and guess.isalpha() == True:
-                    self.check_guess(guess)
-                    self.list_of_guesses.append(guess)
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
         return
     
 def play_game(word_list):
