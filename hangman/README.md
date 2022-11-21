@@ -205,3 +205,4 @@ Note: For a complete code program, see the "milestone_4.py" file.
 * Initialiasing the variables within the class
 * Implementing and defining methods within the class
 * Calling the class methods to run the game
+* Instantiation of the class
