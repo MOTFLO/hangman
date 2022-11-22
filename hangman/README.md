@@ -1,12 +1,21 @@
-# Milestone 2
-### The milestone_2.py is a Python file, build in Python programming language, were are created variables, methods and functions for the Hangman game, using the VS Code. 
-### In Miletone 2 have been implemented the following functionalities: 
+# Hangman
+#### The Hangman is a game project that, which is defined along a five milestones, where each milestone is covering a set of functionalities of the game, based on Object Oriented Programming (OOP), using Python 3 as a programming language and Visual Studio Code as source-code editor for the program.
+
+## Milestone 1
+#### First milestone of the project is covering the fundamentals of the Python 3 programming language and setting up the virtual enviroment for the execution of the project, see the following:
+* Python 3
+* Visual Studio Code
+* GitHub and Git
+
+## Milestone 2
+#### The milestone_2.py is a Python file, build in Python programming language, were are created variables, methods and functions for the Hangman game, using the VS Code. 
+#### In Miletone 2 have been implemented the following functionalities: 
 * How to define a list of possible words
 * How to chose a random word from the list
 * How to ask the user for an input
 * How to check that the input is a single character
 
-## Defining a list of possible words
+### Defining a list of possible words
 ```
 # Creating a list contanning the names of 5 favorite fruits
 # Assigning the list to a variable called word_list
@@ -15,7 +24,7 @@
 word_list = ["apple", "banana", "orange", "pear", "strawberry"]
 print (word_list)
 ```
-## Chosing a random word from the list
+### Chosing a random word from the list
 ```
 # Importing the "import random" to import the module for random method
 # Creating the "random.choice" method and pass the word_list variable into
@@ -26,14 +35,14 @@ random.choice(word_list)
 word = random.choice(word_list)
 print (word)
 ```
-## Asking the user for an input
+### Asking the user for an input
 ```
 # Implemeting the "input" function to ask the user to enter a single letter
 # Assigning the "input" function to a variable called "guess"
 
 guess = input("Please enter a single letter:")
 ```
-## Checking that the input is a single character
+### Checking that the input is a single character
 ```
 # Creating an "if" statement that checks if the lenght of the input is equal to 1 and the input is an alphabet
 # "If" statement is met, then printing a message that says "Good guess!"
@@ -44,12 +53,12 @@ if len(guess) <= 1 and guess.isalpha () == True:
 else:
     print ("Oops! That is not a valid input.")
 ```
-# Milestone 3
+## Milestone 3
 ### The milstone 3 is providing further information on how to define a function in oreder to use for a specific functionality. In the case scenarios have been implemented two types of fuctions, which are called for different type of process.
 * A function that will take the guessed letter as an argument and and ckeck if the letter is in the word
 * A function that is asking for an input from the user
 
-## Defining a function that is checking the guess from the user
+### Defining a function that is checking the guess from the user
 ```
 # Defining a function called "check_guess" and passing the "guess" as a parameter for the function
 # Converting the input from the user into lower case using the method "guess.lower()"
@@ -73,7 +82,7 @@ def check_guess(guess):
     else:
         return check_guess
 ```
-## Defining a function that is asking for input from the user
+### Defining a function that is asking for input from the user
 ```
 # Defining the function called "ask_for_input"
 # Asking for the input from the user using the guees variable
@@ -91,14 +100,14 @@ def ask_for_input():
 
 ask_for_input()
 ```
-# Milestone 4
-### In milestone 4 has been implemented the Object Oriented Programming (OOP), creating a game class Hangman, covering the following taks:
+## Milestone 4
+#### In milestone 4 has been implemented the Object Oriented Programming (OOP), creating a game class Hangman, covering the following taks:
 * How to create and initialise a class
 * Creating methods for running the checks
 * Defining what happens if the letter is in the word in "check_guess" method
 * Defining what happens if letter in NOT in the word in "check_guess" method
 
-## How to create and initialize a class
+### How to create and initialize a class
 ```
 # First is created a class Hangman
 # Within the class is defined the "_init_" methot to initialise the attributes of the self class, having the parameters "word_list" and "num_lives"
@@ -124,7 +133,7 @@ class Hangman:
 game = Hangman()
 game.__init__()
 ```
-## Creating methods for running the checks
+### Creating methods for running the checks
 ```
 # Defining a method "check_guess" method and passing the "guess" to the method as parameter
 # Converting the "guess" variable input to lower case using "guess.lower()" method
@@ -160,7 +169,7 @@ def ask_for_input(self):
                 self.list_of_guesses.append(guess)
         return
 ```
-## Defining what happens if the letter is in the word in "check_guess" method
+### Defining what happens if the letter is in the word in "check_guess" method
 ```
 # Replacing the underscore(s) in the "word_guessed" with the letter guesssed by the user input
 # Creating a for-loop that will loop through each letter in the word
@@ -176,7 +185,7 @@ def ask_for_input(self):
             print (self.word_guessed)
             self.num_letters -= 1
 ```
-## Defining what happens if letter in NOT in the word in "check_guess" method
+### Defining what happens if letter in NOT in the word in "check_guess" method
 ```
 # Within the "check_guess" method is created an "else" statement as a continuity of the method
 # If the above conditions has not been met, then do the following
@@ -196,10 +205,10 @@ def ask_for_input(self):
 ```
 Note: For a complete code program, see the "milestone_4.py" file.
 
-# Milestone 5
-### The logic of the Hangman game is to play the game as long the number of lives are not exceeded and the letter is in a word that have to be guessed. If the guess letter is in the random word from the list, wich is implemented in the game, the word will be reconstructed guess by guess, taking an input from the user.
-### Every time a letter is not a match, the number of lives for the player is decreasing by 1. When the number of lives is 0, the player has lost the game.
-### The creation of the Hangman game is based on a number of factors as:
+## Milestone 5
+#### The logic of the Hangman game is to play the game as long the number of lives are not exceeded and the letter is in a word that have to be guessed. If the guess letter is in the random word from the list, wich is implemented in the game, the word will be reconstructed guess by guess, taking an input from the user.
+#### Every time a letter is not a match, the number of lives for the player is decreasing by 1. When the number of lives is 0, the player has lost the game.
+#### The creation of the Hangman game is based on Object Oriented Programming (OOP) a number of factors as:
 * Defining a class
 * Implementing variables for the class
 * Initialiasing the variables within the class
