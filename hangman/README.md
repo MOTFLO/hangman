@@ -1,5 +1,5 @@
 # Hangman
-#### The Hangman is a game project that, which is defined along a five milestones, where each milestone is covering a set of functionalities of the game, based on Object Oriented Programming (OOP), using Python 3 as a programming language and Visual Studio Code as source-code editor for the program.
+#### The Hangman is a game project, which is defined along a five milestones, where each milestone is covering a set of functionalities of the game, based on Object Oriented Programming (OOP), using Python 3 as a programming language and Visual Studio Code as source-code editor for the program.
 
 ## Milestone 1
 #### First milestone of the project is covering the fundamentals of the Python 3 programming language and setting up the virtual enviroment for the execution of the project, see the following:
