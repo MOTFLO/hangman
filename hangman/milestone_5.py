@@ -84,7 +84,6 @@ class Hangman:
             self.list_of_guesses.append(guess)
         return    
 
-
     # Defining a function called "play_game" that takes "word_list" as a parameter, to play the game.
     # An instance of the Hangman class, assigning to a variable called "game" and passing "word_list" and "num_lives" as arguments to the game object.
     # While loop condition is set to True:
